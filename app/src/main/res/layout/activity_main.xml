@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.groupproject.weatherrecs.MainActivity">
+
+
+
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlue" />
+
+
+    <View
+        android:id="@+id/centerShim"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_centerVertical="true" />
+
+
+    <View
+
+        android:id="@+id/rightSide"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true" />
+
+
+    <TextView
+        android:id="@+id/temperatureTextView"
+        android:text="[Temp]"
+        android:textSize="65dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iconImageView"
+        android:layout_toLeftOf="@+id/rightSide"
+        android:layout_alignTop="@+id/iconImageView" />
+
+
+    <TextView
+        android:id="@+id/cityTextView"
+        android:text="[City]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iconImageView"
+        android:layout_toLeftOf="@+id/rightSide"
+        android:layout_below="@+id/temperatureTextView" />
+
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:text="[Status]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iconImageView"
+        android:layout_toLeftOf="@+id/rightSide"
+        android:layout_below="@+id/cityTextView"
+        android:layout_marginTop="5dp" />
+
+
+    <TextView
+        android:id="@+id/rainTextView"
+        android:text="[Chance of Rain]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/centerShim"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/clothesTextView"
+        android:text="[What You Should Wear]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/centerShim"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/accessoriesTextView"
+        android:text="[What You Should Bring]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clothesTextView"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/uvTextView"
+        android:text="[Sunscreen]"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/accessoriesTextView"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true" />
+
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="?attr/colorBackgroundFloating"
+        android:layout_above="@+id/centerShim"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="20dp" />
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/transparent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    <include layout="@layout/content_main" />
+
+</RelativeLayout>
+
