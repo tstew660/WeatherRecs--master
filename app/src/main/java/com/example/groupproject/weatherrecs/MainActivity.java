@@ -59,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private static final int MY_PERMISSION_REQUEST_FINE_LOCATION = 101;
     private static final int MY_PERMISSION_REQUEST_COARSE_LOCATION = 102;
     private boolean permissionIsGranted = false;
-    private DownloadHourlyData hourlyTask;
-    private DownloadAPIData taskHelper;
+
 
 
     // gives access to preferences in non-activity classes
@@ -99,20 +98,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         locationRequest.setInterval(100);
         locationRequest.setFastestInterval(100);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-
-
-
-
-
-
-
-
-        taskHelper = new DownloadAPIData();
-        hourlyTask = new DownloadHourlyData();
-
-
-
-
 
     }
 
@@ -175,9 +160,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         myLatitude = location.getLatitude();
         myLongitude = location.getLongitude();
 
-        //DownloadHourlyData hourlyTask = new DownloadHourlyData();
+        DownloadHourlyData hourlyTask = new DownloadHourlyData();
         hourlyTask.execute("http://api.wunderground.com/api/43f3a903f5e333e9/hourly/q/LA/"+myLatitude+","+myLongitude+".json");
-        //DownloadAPIData taskHelper = new DownloadAPIData();
+        DownloadAPIData taskHelper = new DownloadAPIData();
         taskHelper.execute("http://api.wunderground.com/api/43f3a903f5e333e9/conditions/q/"+myLatitude+","+myLongitude+".json");
 
     }
